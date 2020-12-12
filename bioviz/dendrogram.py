@@ -12,10 +12,13 @@ class Dendrogram(object):
     plot_width = 500
     plot_height = 500
     dest_file = ''
+    p = figure()
 
     def draw(self, file):
         if self.dest_file is '':
             self.dest_file = file.split('/')[-1].split('.')[0] + '_dendrogram.html'
+        elif self.dest_file.split('.')[-1] != 'html':
+            self.dest_file += ".html"
         output_file(self.dest_file)
 
         # Constants
@@ -112,43 +115,45 @@ class Dendrogram(object):
         draw_y = [[start_y, line[1]] if line[0] == 0 else [line[0], line[1]] for line in draw_y]
 
         # Draw plot
-        p = figure(plot_width=self.plot_width, height=self.plot_height)
+        self.p = figure(plot_width=self.plot_width, height=self.plot_height)
 
         # Set plot width for labels to be visible.
         longest = max(label_x)
-        p.x_range = Range1d(-0.01, longest + len(max(names)) * longest * 0.02)
+        self.p.x_range = Range1d(-0.01, longest + len(max(names)) * longest * 0.02)
 
         # Don't show y axis.
-        p.yaxis.visible = False
+        self.p.yaxis.visible = False
 
         # Draw lines
         for xline, yline in zip(draw_x, draw_y):
             # print(xline, yline)
-            p.step(xline, yline, line_width=2, mode="before", color="black")
+            self.p.step(xline, yline, line_width=2, mode="before", color="black")
 
         source = ColumnDataSource(data=dict(x=label_x, y=label_y, labels=names))
         name_labels = LabelSet(x='x', y='y', text='labels', level='glyph',
                                text_font_size=str(self.name_label_size)+"pt",
                                x_offset=5, y_offset=0, source=source, render_mode='canvas')
-        p.add_layout(name_labels)
+        self.p.add_layout(name_labels)
 
         source = ColumnDataSource(data=dict(x=label_x, y=label_y, labels=terminal_lengths))
         length_labels = LabelSet(x='x', y='y', text='labels', level='glyph',
                                  text_font_size=str(self.length_label_size)+"pt",
                                  x_offset=5, y_offset=-14, source=source, render_mode='canvas')
-        p.add_layout(length_labels)
+        self.p.add_layout(length_labels)
 
-        show(p)
-        return p
+        return self.p
 
-    def export_image(self, plot, img_type, transparent=False):
+    def show(self):
+        show(self.p)
+
+    def export_image(self, img_type, transparent=False):
         if transparent:
-            plot.background_fill_color = None
-            plot.border_fill_color = None
+            self.p.background_fill_color = None
+            self.p.border_fill_color = None
         if img_type is "png":
-            return export_png(plot, filename=self.dest_file.split(".")[0] + ".png")
+            return export_png(self.p, filename=self.dest_file.split(".")[0] + ".png")
         elif img_type is "svg":
-            plot.output_backend = "svg"
-            export_svgs(plot, filename=self.dest_file.split(".")[0] + ".svg")
+            self.p.output_backend = "svg"
+            export_svgs(self.p, filename=self.dest_file.split(".")[0] + ".svg")
         else:
             return print("Possible image types are 'svg' and 'png'.")

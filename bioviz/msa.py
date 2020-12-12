@@ -1,94 +1,206 @@
-from bioviz import colorMaps
-from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
-from bokeh.models.glyphs import Text
-from bokeh.io import show, output_file
-from bokeh.io.export import export_png, export_svgs
-from bokeh.transform import factor_cmap
-from bokeh.layouts import column
-import math
-from datetime import datetime
+from bioviz import dendrogram, alignment, seqLogo, parser, colorMaps
+import logging
 
 
-class MSA(object):
-    plot_width = 100
-    dest_file = ''
+file_formats = ['clustal', 'clustal_num', 'msf', 'fasta']
+color_maps = colorMaps.get_all_color_map_names()
 
-    def draw(self, parsed_sequences, color_scheme):
-        if self.dest_file is '':
-            timestamp = datetime.now().strftime("%y%m%d%H%M%S%f")
-            self.dest_file = 'seqLogo_' + timestamp + '.html'
-        output_file(self.dest_file)
-        color_map = colorMaps.get_colormap(color_scheme)
-        sequence_count = len(parsed_sequences)
-        seq_lengths = [parsed_sequences[i].get('seq_length') for i in range(0, sequence_count)]
-        max_seq_length = max(seq_lengths)
 
-        # Each subplot should be plot_width letter 'long' at max.
-        subplot_count = math.ceil(max_seq_length / self.plot_width)
-        plots = []
+def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, steps=5, dest_file=''):
+    """ Gets a multiple sequence alignment file and draws the plot into an html file.
 
-        # Create subplots.
-        for k in range(0, subplot_count):
-            x_start = 1 + self.plot_width * k
+    :param file: The path to the clustal / clustal_num / msf / fasta file.
+    :type file: str
+    :param color_scheme: The name of the color scheme.
+    :type color_scheme: str
+    :param plot_width: An integer number for the width of the plot. Default is 20px.
+    :type plot_width: int
+    :param plot_height: An integer number for the height of the plot. Default is 160px.
+    :type plot_height: int
+    :param steps: An integer number to use as the step size of the 'x' axis. Default is 5.
+    :type steps: int
+    :param dest_file: The filename the html output should be saved as. Default is seqLogo_<timestamp>.html
+    :type dest_file: str
+    :return: A SeqLogo object.
+    :rtype: SeqLogo
+    """
+    if file.split('.')[-1] not in file_formats:
+        logging.error("File format must be clustal / clustal_num / msf / fasta!")
+        return
+    if color_scheme not in color_maps:
+        logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
+        return
+    sl = seqLogo.SeqLogo()
+    sl.plot_width = plot_width
+    sl.plot_height = plot_height
+    sl.steps = steps
+    sl.dest_file = dest_file
+    parsed_sequences = parser.parse_file(file)
+    sl.draw(parsed_sequences, color_scheme)
+    return sl
 
-            if k == subplot_count-1:
-                x_end = max_seq_length + 1
-                self.plot_width = (x_end - x_start)*1.25
-            else:
-                x_end = self.plot_width + 1 + self.plot_width * k
 
-            # X has the values of the X axis of the plot - same for every sequence
-            # Y has the values of the Y axis of the plot - different for every sequence
-            x = range(x_start, x_end)
+def draw_seqlogo_from_parsed_seq(parsed_sequences, color_scheme, plot_width=20, plot_height=160, steps=5, dest_file=''):
+    """ Gets the parsed sequences and draws the plot into an html file.
 
-            subplot = Plot(title=None, plot_width=int(10 * self.plot_width), plot_height=30 * sequence_count,
-                           x_range=Range1d(start=x_start-1, end=x_end),
-                           y_range=Range1d(start=0, end=sequence_count),
-                           min_border_top=10, toolbar_location=None)
+    :param parsed_sequences: Array of the parsed sequences.
+    :type parsed_sequences: list
+    :param color_scheme: The name of the color scheme.
+    :type color_scheme: str
+    :param plot_width: An integer number for the width of the plot. Default is 20px.
+    :type plot_width: int
+    :param plot_height: An integer number for the height of the plot. Default is 160px.
+    :type plot_height: int
+    :param steps: An integer number to use as the step size of the 'x' axis. Default is 5.
+    :type steps: int
+    :param dest_file: The filename the html output should be saved as. Default is seqLogo_<timestamp>.html
+    :type dest_file: str
+    :return: A SeqLogo object.
+    :rtype: SeqLogo
+    """
+    if color_scheme not in color_maps:
+        logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
+        return
+    sl = seqLogo.SeqLogo()
+    sl.plot_width = plot_width
+    sl.plot_height = plot_height
+    sl.steps = steps
+    sl.dest_file = dest_file
+    sl.draw(parsed_sequences, color_scheme)
+    return sl
 
-            # Add sequences to the plot.
-            for i in range(0, sequence_count):
-                y_seq = []
-                # The y value for the i. sequence will be i for all letters.
-                for j in range(x_start, x_end):
-                    y_seq.append(i + 1)
 
-                seq = list(parsed_sequences[i].get('seq'))[x_start-1:x_end-1]
-                source_seq = ColumnDataSource(dict(x=x, y=y_seq, text=seq))
+def draw_alignment_from_file(file, color_scheme, plot_width=100, dest_file=''):
+    """ Gets a multiple sequence alignment file and draws the plot into an html file.
 
-                glyph_seq = Text(x="x", y="y", text="text",
-                                 text_color=factor_cmap('text', palette=list(color_map.values()),
-                                                        factors=list(color_map.keys())),
-                                 text_font_size="9pt",
-                                 x_offset=-3.3,
-                                 text_line_height=0.8,
-                                 text_baseline="top")
-                subplot.add_glyph(source_seq, glyph_seq)
+    :param file: The path to the clustal / clustal_num / msf / fasta file.
+    :type file: str
+    :param color_scheme: The name of the color scheme.
+    :type color_scheme: str
+    :param plot_width: An integer number for the width of the plot. Default is 100px.
+    :type plot_width: int
+    :param dest_file: The filename the html output should be saved as. Default is alignment_<timestamp>.html
+    :type dest_file: str
+    :return: An Alignment object.
+    :rtype: Alignment
+    """
+    if color_scheme not in color_maps:
+        logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
+        return
+    if file.split('.')[-1] not in file_formats:
+        logging.error("File format must be clustal / clustal_num / msf / fasta!")
+        return
+    logo = alignment.Alignment()
+    logo.plot_width = plot_width
+    logo.dest_file = dest_file
+    parsed_seq = parser.parse_file(file)
+    logo.draw(parsed_seq, color_scheme)
+    return logo
 
-                # print(i, y_seq[0], seq)
 
-            xaxis = LinearAxis(axis_label="Position")
-            xaxis.bounds = (x_start, x_end)
-            xaxis.ticker = [x_start] + (list(range(x_start+19, x_end, 20)))
-            subplot.add_layout(xaxis, 'below')
-            subplot.min_border_left = 50
+def draw_alignment_from_parsed_seq(parsed_seq, color_scheme, plot_width=100, dest_file=''):
+    """ Gets the parsed sequences and draws the plot into an html file.
 
-            subplot.add_layout(Grid(dimension=0, ticker=xaxis.ticker))
-            plots.append(subplot)
+    :param parsed_seq: Array of the parsed sequences.
+    :type parsed_seq: list
+    :param color_scheme: The name of the color scheme.
+    :type color_scheme: str
+    :param plot_width: An integer number for the width of the plot. Default is 100px.
+    :type plot_width: int
+    :param dest_file: The filename the html output should be saved as. Default is alignment_<timestamp>.html
+    :type dest_file: str
+    :return: An Alignment object.
+    :rtype: Alignment
+    """
+    if color_scheme not in color_maps:
+        logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
+        return
+    logo = alignment.Alignment()
+    logo.plot_width = plot_width
+    logo.dest_file = dest_file
+    logo.draw(parsed_seq, color_scheme)
+    return logo
 
-        show(column(plots))
-        return plots
 
-    def export_image(self, plots, img_type, transparent=False):
-        if transparent:
-            for plot in plots:
-                plot.background_fill_color = None
-                plot.border_fill_color = None
-        if img_type is "png":
-            return export_png(column(plots), filename=self.dest_file.split(".")[0] + ".png")
-        elif img_type is "svg":
-            for plot in plots:
-                plot.output_backend = "svg"
-            return export_svgs(column(plots), filename=self.dest_file.split(".")[0] + ".svg")
-        else:
-            return print("Possible image types are 'svg' and 'png'.")
+def draw_dendrogram(dnd_file, name_label_size=7, length_label_size=6, plot_width=500, plot_height=500, dest_file=''):
+    """ Gets a dnd file and draws the plot into an html file.
+
+    :param dnd_file: Path to the dnd file.
+    :type dnd_file: str
+    :param name_label_size: An integer for the label size of the displayed names. Default is 7px.
+    :type name_label_size: int
+    :param length_label_size: An integer for the label size of the displayed lengths. Default is 6px.
+    :type length_label_size: int
+    :param plot_width: An integer number for the width of the plot. Default is 500px.
+    :type plot_width: int
+    :param plot_height: An integer number for the height of the plot. Default is 500px.
+    :type plot_height: int
+    :param dest_file: The filename the html output should be saved as. Default is <input file name>_dendrogram.html
+    :type dest_file: str
+    :return: A Dendrogram object.
+    :rtype: Dendrogram
+    """
+    if dnd_file.split('.')[-1] != 'dnd':
+        logging.error("File format must be dnd!")
+        return
+    d = dendrogram.Dendrogram()
+    d.name_label_size = name_label_size
+    d.length_label_size = length_label_size
+    d.plot_width = plot_width
+    d.plot_height = plot_height
+    d.dest_file = dest_file
+    d.draw(dnd_file)
+    return d
+
+
+def show(logo):
+    """Opens the default browser and opens the html containing the logo.
+
+    :param logo: A SeqLogo / Alignment / Dendrogram object.
+    """
+    if not isinstance(logo, dendrogram.Dendrogram) and not isinstance(logo, seqLogo.SeqLogo) and not isinstance(logo, alignment.Alignment):
+        logging.error("The logo parameter should be the type of Dendrogram / SeqLogo / Alignment.")
+        return
+    logo.show()
+
+
+def export_image(logo, img_type, transparent=False):
+    """Saves the image the same name as the html file.
+
+    :param logo: A SeqLogo / Alignment / Dendrogram object.
+    :param img_type: "png" or "svg"
+    :type img_type: str
+    :param transparent: Default is False.
+    :type transparent: bool
+    """
+    if not isinstance(logo, dendrogram.Dendrogram) and not isinstance(logo, alignment.Alignment):
+        logging.error("The logo parameter should be the type of Dendrogram / Alignment.")
+        return
+    if img_type != 'png' and img_type != 'svg':
+        logging.error("Image type should be png or svg.")
+        return
+    logo.export_image(img_type, transparent)
+
+
+def get_all_color_map_names():
+    """
+    :return: List of all available color maps.
+    :rtype: list
+    """
+    return colorMaps.get_all_color_map_names()
+
+
+def get_nucleotide_color_map_names():
+    """
+    :return: List of all available color maps for nucleotides.
+    :rtype: list
+    """
+    return colorMaps.get_nucleotide_color_map_names()
+
+
+def get_protein_color_map_names():
+    """
+    :return: List of all available color maps for proteins.
+    :rtype: list
+    """
+    return colorMaps.get_protein_color_map_names()

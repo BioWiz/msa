@@ -1,14 +1,11 @@
 import math
-import os
-
-from bioviz import calcRatio, colorMaps, utils
+from bioviz import colorMaps, utils
 from bokeh.io import output_file, show
-from bokeh.io.export import get_screenshot_as_png
+from bokeh.io.export import export_png, export_svgs
 from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
 from bokeh.models.glyphs import ImageURL
 from bokeh.layouts import column
 from datetime import datetime
-from selenium import webdriver
 
 
 class SeqLogo(object):
@@ -16,16 +13,18 @@ class SeqLogo(object):
     plot_height = 160
     # Steps of the ticker on the x axis
     steps = 5
-    _root_path = os.path.realpath(os.getcwd())
     dest_file = ''
+    plots = []
 
     def draw(self, parsed_sequences, color_scheme):
         if self.dest_file is '':
             timestamp = datetime.now().strftime("%y%m%d%H%M%S%f")
             self.dest_file = 'seqLogo_' + timestamp + '.html'
+        elif self.dest_file.split('.')[-1] != 'html':
+            self.dest_file += ".html"
         output_file(self.dest_file)
 
-        ratio = calcRatio.calculate_ratio(parsed_sequences)
+        ratio = utils.calculate_ratio(parsed_sequences)
         seq_length = len(ratio)
         # data numbering starts at 1 -> so should the ratio
         ratio.insert(0, {})
@@ -36,7 +35,6 @@ class SeqLogo(object):
 
         # Each subplot should be plot_width letter 'long' at max.
         subplot_count = math.ceil(seq_length / self.plot_width)
-        plots = []
 
         # Create subplots.
         for k in range(0, subplot_count):
@@ -58,18 +56,18 @@ class SeqLogo(object):
                            y_range=Range1d(start=0, end=1),
                            min_border_top=10, toolbar_location=None)
 
-            sum = 0
+            _sum = 0
             for r in range(x_start, x_end):
                 for letter, rat in ratio[r].items():
                     remainder = 0
                     if not rat == 1.0:
-                        remainder = sum % 1
-                    sum += rat
+                        remainder = _sum % 1
+                    _sum += rat
                     if not rat == 0.0:
-                        image = ImageURL(name=letter, url=dict(value=self._root_path + "/images/" + letter + ".svg"), x=r, y=remainder,
+                        image = ImageURL(name=letter, url=dict(value="images/" + letter + ".svg"), x=r, y=remainder,
                                          w=1, h=rat, anchor="bottom_center")
                         subplot.add_glyph(source_seq, image)
-                sum = 0
+                _sum = 0
 
             xaxis = LinearAxis(axis_label="Position")
             xaxis.bounds = (x_start, x_end)
@@ -77,23 +75,25 @@ class SeqLogo(object):
             subplot.add_layout(xaxis, 'below')
 
             subplot.add_layout(Grid(dimension=0, ticker=xaxis.ticker))
-            plots.append(subplot)
+            self.plots.append(subplot)
 
-            return plots
+            return self.plots
 
-    def show(self, plots):
-        show(column(plots))
+    def show(self):
+        show(column(self.plots))
 
-    def export_image(self, plots, img_type, transparent=False):
-        _options = webdriver.ChromeOptions()
-        _options.add_argument('--disable-web-security')
-        _webd = webdriver.Chrome(options=_options)
+    def export_image(self, img_type, transparent=False):
         if transparent:
-            for plot in plots:
+            for plot in self.plots:
                 plot.background_fill_color = None
                 plot.border_fill_color = None
         if img_type is "png":
-            image = get_screenshot_as_png(column(plots), driver=_webd)
-            return image.save("seqLogo.png")
+            return export_png(column(self.plots), filename=self.dest_file.split(".")[0] + ".png")
+            # image = get_screenshot_as_png(column(plots), height=self.plot_height, width=self.plot_width)
+            # return image.save("seqlogo.png")
+        elif img_type is "svg":
+            for plot in self.plots:
+                plot.output_backend = "svg"
+            return export_svgs(column(self.plots), filename=self.dest_file.split(".")[0] + ".svg")
         else:
-            return print("Possible image type is 'png'.")
+            return print("Possible image types are 'svg' and 'png'.")
