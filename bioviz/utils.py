@@ -2,6 +2,8 @@ import xml.etree.ElementTree as ET
 
 
 def add_color(letter, color):
+    if letter == '-':
+        return
     svg_tree = ET.parse('images/' + letter + '.svg')
     svg_root = svg_tree.getroot()
 
