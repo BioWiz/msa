@@ -6,13 +6,14 @@ from bokeh.plotting import figure, output_file, show
 
 
 class Dendrogram(object):
-    # Customizable features
-    name_label_size = 7
-    length_label_size = 6
-    plot_width = 500
-    plot_height = 500
-    dest_file = ''
-    p = figure()
+
+    def __init__(self,name_label_size,length_label_size, plot_width, plot_height, dest_file):
+        self.name_label_size = name_label_size
+        self.length_label_size = length_label_size
+        self.plot_width = plot_width
+        self.plot_height = plot_height
+        self.dest_file = dest_file
+        self.p = figure()
 
     def draw(self, file):
         if self.dest_file is '':

@@ -6,7 +6,7 @@ file_formats = ['clustal', 'clustal_num', 'msf', 'fasta']
 color_maps = colorMaps.get_all_color_map_names()
 
 
-def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, steps=5, dest_file=''):
+def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, plot_height=5, dest_file=''):
     """ Gets a multiple sequence alignment file and draws the plot into an html file.
 
     :param file: The path to the clustal / clustal_num / msf / fasta file.
@@ -30,11 +30,7 @@ def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, s
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
         return
-    sl = seqLogo.SeqLogo()
-    sl.plot_width = plot_width
-    sl.plot_height = plot_height
-    sl.steps = steps
-    sl.dest_file = dest_file
+    sl = seqLogo.SeqLogo(plot_width, plot_height, plot_height, dest_file)
     parsed_sequences = parser.parse_file(file)
     sl.draw(parsed_sequences, color_scheme)
     return sl
@@ -61,11 +57,7 @@ def draw_seqlogo_from_parsed_seq(parsed_sequences, color_scheme, plot_width=20, 
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
         return
-    sl = seqLogo.SeqLogo()
-    sl.plot_width = plot_width
-    sl.plot_height = plot_height
-    sl.steps = steps
-    sl.dest_file = dest_file
+    sl = seqLogo.SeqLogo(plot_width, plot_height, plot_height, dest_file)
     sl.draw(parsed_sequences, color_scheme)
     return sl
 
@@ -90,9 +82,7 @@ def draw_alignment_from_file(file, color_scheme, plot_width=100, dest_file=''):
     if file.split('.')[-1] not in file_formats:
         logging.error("File format must be clustal / clustal_num / msf / fasta!")
         return
-    logo = alignment.Alignment()
-    logo.plot_width = plot_width
-    logo.dest_file = dest_file
+    logo = alignment.Alignment(plot_width, dest_file)
     parsed_seq = parser.parse_file(file)
     logo.draw(parsed_seq, color_scheme)
     return logo
@@ -115,9 +105,7 @@ def draw_alignment_from_parsed_seq(parsed_seq, color_scheme, plot_width=100, des
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
         return
-    logo = alignment.Alignment()
-    logo.plot_width = plot_width
-    logo.dest_file = dest_file
+    logo = alignment.Alignment(plot_width, dest_file)
     logo.draw(parsed_seq, color_scheme)
     return logo
 
@@ -143,12 +131,7 @@ def draw_dendrogram(dnd_file, name_label_size=7, length_label_size=6, plot_width
     if dnd_file.split('.')[-1] != 'dnd':
         logging.error("File format must be dnd!")
         return
-    d = dendrogram.Dendrogram()
-    d.name_label_size = name_label_size
-    d.length_label_size = length_label_size
-    d.plot_width = plot_width
-    d.plot_height = plot_height
-    d.dest_file = dest_file
+    d = dendrogram.Dendrogram(name_label_size, length_label_size, plot_width, plot_height, dest_file)
     d.draw(dnd_file)
     return d
 

@@ -9,6 +9,15 @@ from datetime import datetime
 
 
 class SeqLogo(object):
+    
+    def __init__(self,plot_width,plot_height,steps,dest_file):
+        self.plots = []
+        self.plot_width = plot_width
+        self.plot_height = plot_height
+        # Steps of the ticker on the x axis
+        self.steps = steps
+        self.dest_file = dest_file
+
     plot_width = 20
     plot_height = 160
     # Steps of the ticker on the x axis

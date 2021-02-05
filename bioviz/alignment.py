@@ -10,9 +10,11 @@ from datetime import datetime
 
 
 class Alignment(object):
-    plot_width = 100
-    dest_file = ''
-    plots = []
+    def __init__(self, plot_width, dest_file):
+        self.plots = []
+        self.plot_width = plot_width
+        self.dest_file = dest_file
+
 
     def draw(self, parsed_sequences, color_scheme):
         if self.dest_file is '':
