@@ -22,4 +22,5 @@ setuptools.setup(
         "Topic :: Scientific/Engineering :: Visualization"
     ],
     python_requires='>=3.7',
+    install_requires=['biopython==1.78', 'bokeh==2.2.1']
 )
