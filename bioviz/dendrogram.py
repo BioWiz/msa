@@ -2,7 +2,7 @@ import copy
 from Bio import Phylo
 from bokeh.io import export_png, export_svgs
 from bokeh.models import ColumnDataSource, LabelSet, Range1d
-from bokeh.plotting import figure, output_file, show
+from bokeh.plotting import figure, output_file, show, save
 
 
 class Dendrogram(object):
@@ -146,6 +146,9 @@ class Dendrogram(object):
 
     def show(self):
         show(self.p)
+
+    def save(self):
+        save(self.p,filename=self.dest_file, title='BioViz Dendogram')
 
     def export_image(self, img_type, transparent=False):
         if transparent:

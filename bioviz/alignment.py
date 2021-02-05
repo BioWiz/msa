@@ -1,7 +1,7 @@
 from bioviz import colorMaps
 from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
 from bokeh.models.glyphs import Text
-from bokeh.io import show, output_file
+from bokeh.io import show, output_file, save
 from bokeh.io.export import export_png, export_svgs
 from bokeh.transform import factor_cmap
 from bokeh.layouts import column
@@ -95,6 +95,9 @@ class Alignment(object):
 
     def show(self):
         show(column(self.plots))
+    
+    def save(self):
+        save(column(self.plots),filename=self.dest_file, title='BioViz MSA')
 
     def export_image(self, img_type, transparent=False):
         if transparent:

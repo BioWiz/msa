@@ -1,6 +1,6 @@
 import math
 from bioviz import colorMaps, utils
-from bokeh.io import output_file, show
+from bokeh.io import output_file, show, save
 from bokeh.io.export import export_png, export_svgs
 from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
 from bokeh.models.glyphs import ImageURL
@@ -90,6 +90,9 @@ class SeqLogo(object):
 
     def show(self):
         show(column(self.plots))
+    
+    def save(self):
+        save(column(self.plots),filename=self.dest_file, title='BioViz Sequence Logo')
 
     def export_image(self, img_type, transparent=False):
         if transparent:

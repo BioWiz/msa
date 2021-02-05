@@ -6,7 +6,7 @@ file_formats = ['clustal', 'clustal_num', 'msf', 'fasta']
 color_maps = colorMaps.get_all_color_map_names()
 
 
-def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, plot_height=5, dest_file=''):
+def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, steps=5, dest_file=''):
     """ Gets a multiple sequence alignment file and draws the plot into an html file.
 
     :param file: The path to the clustal / clustal_num / msf / fasta file.
@@ -30,7 +30,7 @@ def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, p
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
         return
-    sl = seqLogo.SeqLogo(plot_width, plot_height, plot_height, dest_file)
+    sl = seqLogo.SeqLogo(plot_width, plot_height, steps, dest_file)
     parsed_sequences = parser.parse_file(file)
     sl.draw(parsed_sequences, color_scheme)
     return sl
@@ -145,6 +145,17 @@ def show(logo):
         logging.error("The logo parameter should be the type of Dendrogram / SeqLogo / Alignment.")
         return
     logo.show()
+
+def save(logo):
+    """Save the html file containing the interactive logo without opening it in the browser.
+    
+    :param logo: A SeqLogo / Alignment / Dendrogram object.
+    """
+    if not isinstance(logo, dendrogram.Dendrogram) and not isinstance(logo, seqLogo.SeqLogo) and not isinstance(logo, alignment.Alignment):
+        logging.error("The logo parameter should be the type of Dendrogram / SeqLogo / Alignment.")
+        return
+    logo.save()
+
 
 
 def export_image(logo, img_type, transparent=False):
