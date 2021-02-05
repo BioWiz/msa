@@ -1,6 +1,6 @@
 from bioviz import dendrogram, alignment, seqLogo, parser, colorMaps
 import logging
-
+from bioviz.exceptions import InvalidColorMapException, InvalidFileFormatException
 
 file_formats = ['clustal', 'clustal_num', 'msf', 'fasta']
 color_maps = colorMaps.get_all_color_map_names()
@@ -26,12 +26,14 @@ def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, s
     """
     if file.split('.')[-1] not in file_formats:
         logging.error("File format must be clustal / clustal_num / msf / fasta!")
-        return
+        return InvalidFileFormatException(f'{file} is not valid for this diagram type. Please use files with clustal msf or fasta extension.' )
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
-        return
+        return  InvalidColorMapException(f'{color_scheme} is not a valid color scheme name.')
     sl = seqLogo.SeqLogo(plot_width, plot_height, steps, dest_file)
     parsed_sequences = parser.parse_file(file)
+    if isinstance(parsed_sequences, Exception):
+        return f'Drawing alignment failed with the following error: {parsed_sequences}'
     sl.draw(parsed_sequences, color_scheme)
     return sl
 
@@ -56,7 +58,7 @@ def draw_seqlogo_from_parsed_seq(parsed_sequences, color_scheme, plot_width=20, 
     """
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
-        return
+        return  InvalidColorMapException(f'{color_scheme} is not a valid color scheme name.')
     sl = seqLogo.SeqLogo(plot_width, plot_height, plot_height, dest_file)
     sl.draw(parsed_sequences, color_scheme)
     return sl
@@ -73,17 +75,19 @@ def draw_alignment_from_file(file, color_scheme, plot_width=100, dest_file=''):
     :type plot_width: int
     :param dest_file: The filename the html output should be saved as. Default is alignment_<timestamp>.html
     :type dest_file: str
-    :return: An Alignment object.
+    :return: An Alignment object, or the exception object if an error occured.
     :rtype: Alignment
     """
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
-        return
+        return  InvalidColorMapException(f'{color_scheme} is not a valid color scheme name.')
     if file.split('.')[-1] not in file_formats:
         logging.error("File format must be clustal / clustal_num / msf / fasta!")
-        return
+        return InvalidFileFormatException(f'{file} is not valid for this diagram type. Please use files with clustal msf or fasta extension.' )
     logo = alignment.Alignment(plot_width, dest_file)
     parsed_seq = parser.parse_file(file)
+    if isinstance(parsed_seq, Exception):
+        return parsed_seq
     logo.draw(parsed_seq, color_scheme)
     return logo
 
@@ -104,7 +108,7 @@ def draw_alignment_from_parsed_seq(parsed_seq, color_scheme, plot_width=100, des
     """
     if color_scheme not in color_maps:
         logging.error("Invalid color map name. See get_all_color_map_names function for available names.")
-        return
+        return  InvalidColorMapException(f'{color_scheme} is not a valid color scheme name.')
     logo = alignment.Alignment(plot_width, dest_file)
     logo.draw(parsed_seq, color_scheme)
     return logo
@@ -130,7 +134,7 @@ def draw_dendrogram(dnd_file, name_label_size=7, length_label_size=6, plot_width
     """
     if dnd_file.split('.')[-1] != 'dnd':
         logging.error("File format must be dnd!")
-        return
+        return InvalidFileFormatException(f'{file} is not valid for this diagram type. Please use files with dnd extension.' )
     d = dendrogram.Dendrogram(name_label_size, length_label_size, plot_width, plot_height, dest_file)
     d.draw(dnd_file)
     return d

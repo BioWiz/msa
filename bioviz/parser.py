@@ -1,5 +1,5 @@
 from Bio import SeqIO
-
+import logging
 
 # This parser requires a file and returns a Seq.
 def parse_file(file):
@@ -12,11 +12,17 @@ def parse_file(file):
 
     sequences = []
 
-    for seq_record in SeqIO.parse(file_name, file_format):
-        sequences.append({
-            'id': seq_record.id,
-            'seq': seq_record.seq,
-            'seq_length': len(seq_record)
-        })
-
-    return sequences
+    try:
+        for seq_record in SeqIO.parse(file_name, file_format):
+            sequences.append({
+                'id': seq_record.id,
+                'seq': seq_record.seq,
+                'seq_length': len(seq_record)
+                }
+            )
+        return sequences
+    except Exception as ex:
+        logging.error(ex)
+        return ex
+    
+    
