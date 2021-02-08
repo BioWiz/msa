@@ -148,8 +148,9 @@ class Dendrogram(object):
         show(self.p)
 
     def save(self):
-        save(self.p,filename=self.dest_file, title='BioViz Dendogram')
-
+        resultFileName = save(self.p,filename=self.dest_file, title='BioViz Dendogram')
+        retun resultFileName
+        
     def export_image(self, img_type, transparent=False):
         if transparent:
             self.p.background_fill_color = None

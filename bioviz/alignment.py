@@ -97,7 +97,8 @@ class Alignment(object):
         show(column(self.plots))
     
     def save(self):
-        save(column(self.plots),filename=self.dest_file, title='BioViz MSA')
+        resultFileName = save(column(self.plots),filename=self.dest_file, title='BioViz MSA')
+        return resultFileName
 
     def export_image(self, img_type, transparent=False):
         if transparent:

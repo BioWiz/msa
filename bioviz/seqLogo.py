@@ -92,8 +92,9 @@ class SeqLogo(object):
         show(column(self.plots))
     
     def save(self):
-        save(column(self.plots),filename=self.dest_file, title='BioViz Sequence Logo')
-
+        resultFileName = save(column(self.plots),filename=self.dest_file, title='BioViz Sequence Logo')
+        return resultFileName
+        
     def export_image(self, img_type, transparent=False):
         if transparent:
             for plot in self.plots:

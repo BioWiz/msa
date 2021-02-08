@@ -158,8 +158,8 @@ def save(logo):
     if not isinstance(logo, dendrogram.Dendrogram) and not isinstance(logo, seqLogo.SeqLogo) and not isinstance(logo, alignment.Alignment):
         logging.error("The logo parameter should be the type of Dendrogram / SeqLogo / Alignment.")
         return
-    logo.save()
-
+    resultFilename = logo.save()
+    return resultFilename
 
 
 def export_image(logo, img_type, transparent=False):
