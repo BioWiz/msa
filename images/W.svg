@@ -1,8 +1,82 @@
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" height="1013.000000pt" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 1280.000000 1013.000000" width="1280.000000pt">
-<ns0:metadata>
-Created by potrace 1.15, written by Peter Selinger 2001-2017
-</ns0:metadata>
-<ns0:g fill="#80a0f0" transform="translate(0.000000,1013.000000) scale(0.100000,-0.100000)">
-<ns0:path d="M342 9627 c-22 -23 -22 -28 -22 -355 0 -258 3 -333 13 -336 6 -2 45 -9 86 -15 248 -38 464 -227 621 -540 99 -198 -22 207 1758 -5911 l590 -2025 590 -3 591 -2 30 97 c16 54 411 1378 876 2943 465 1565 881 2961 923 3102 42 142 79 254 83 250 4 -4 39 -137 78 -297 62 -254 567 -2289 1287 -5187 l226 -908 612 0 612 0 308 997 c2171 7029 1980 6415 2043 6573 123 310 277 549 448 693 146 123 278 184 503 233 l22 4 0 333 0 334 -23 21 -23 22 -1345 0 -1345 0 -27 -28 -27 -28 0 -327 0 -327 23 -4 c12 -3 85 -17 162 -31 261 -49 448 -101 569 -161 72 -35 138 -107 167 -182 46 -121 34 -342 -34 -622 -33 -136 -1338 -4583 -1343 -4577 -1 1 -274 1069 -605 2372 -331 1304 -613 2413 -626 2465 -20 75 -25 122 -27 225 -1 123 0 133 27 190 32 68 72 113 137 155 94 60 288 116 513 149 l122 17 3 334 c2 331 2 334 -20 357 l-21 23 -1932 0 -1932 0 -21 -23 c-22 -23 -22 -28 -22 -355 l0 -332 23 -4 c12 -3 72 -15 132 -27 203 -39 410 -120 525 -204 114 -84 216 -220 275 -369 31 -80 75 -247 77 -291 0 -16 -141 -516 -315 -1110 -174 -594 -476 -1629 -672 -2300 -196 -670 -358 -1221 -360 -1224 -3 -2 -5 -1 -5 2 0 6 -420 1665 -957 3777 -204 804 -245 975 -267 1101 -52 300 24 440 296 553 73 30 208 72 291 90 l27 6 0 333 0 334 -23 21 -23 22 -1815 0 -1816 0 -21 -23z" />
-</ns0:g>
-</ns0:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg24"
+   version="1.1"
+   viewBox="0 0 81 64"
+   height="64mm"
+   width="81mm"
+   sodipodi:docname="W.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="990"
+     id="namedview5691"
+     showgrid="false"
+     inkscape:zoom="0.97565104"
+     inkscape:cx="153.07087"
+     inkscape:cy="120.94488"
+     inkscape:window-x="0"
+     inkscape:window-y="61"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg24" />
+  <defs
+     id="defs18" />
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-233)"
+     id="layer1">
+    <flowRoot
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot26"
+       xml:space="preserve"><flowRegion
+         style="text-align:end;text-anchor:end"
+         id="flowRegion28"><rect
+           style="text-align:end;text-anchor:end"
+           y="3.6670444"
+           x="-2.8571429"
+           height="385.71429"
+           width="380"
+           id="rect30" /></flowRegion><flowPara
+         id="flowPara32" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:88.19444275px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="-43.704521"
+       y="297.16299"
+       id="text5697"><tspan
+         sodipodi:role="line"
+         x="-3.0093324"
+         y="297.16299"
+         id="tspan5695"
+         style="stroke-width:0.26458332;text-anchor:start;text-align:start;"><tspan
+           x="-3.0093312"
+           y="297.16299"
+           id="tspan5693"
+           style="stroke-width:0.26458332;text-anchor:start;text-align:start;">W</tspan></tspan></text>
+  </g>
+</svg>

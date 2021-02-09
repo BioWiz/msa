@@ -1,8 +1,82 @@
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" height="1280.000000pt" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 1208.000000 1280.000000" width="1208.000000pt">
-<ns0:metadata>
-Created by potrace 1.15, written by Peter Selinger 2001-2017
-</ns0:metadata>
-<ns0:g fill="black" transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-<ns0:path d="M487 12262 l-27 -28 0 -432 0 -432 39 0 c69 0 361 -40 512 -70 169 -34 324 -83 435 -137 239 -117 344 -357 374 -863 13 -225 13 -7503 0 -7737 -29 -491 -131 -738 -355 -855 -80 -41 -210 -89 -328 -119 -112 -28 -396 -75 -549 -89 l-128 -13 0 -432 0 -432 23 -21 23 -22 3200 0 c3080 0 3373 2 3759 30 1837 132 3064 618 3705 1466 249 329 413 738 477 1194 26 182 25 682 0 865 -112 793 -472 1384 -1122 1842 -479 338 -1166 615 -2010 812 -198 46 -573 121 -606 121 -52 0 4 18 136 45 186 37 504 115 690 170 1415 416 2145 1089 2281 2102 35 262 17 647 -42 912 -275 1231 -1373 1886 -3499 2086 -643 60 -925 65 -4121 65 l-2840 0 -27 -28z m5864 -842 c599 -59 1050 -310 1341 -744 160 -241 265 -528 319 -872 27 -176 37 -592 20 -770 -27 -271 -93 -509 -197 -714 -249 -490 -726 -779 -1477 -894 -284 -44 -364 -48 -964 -53 l-583 -5 0 1475 c0 921 4 1522 10 1603 31 379 118 625 267 753 130 112 373 192 668 220 120 12 479 12 596 1z m-426 -4960 c340 -18 607 -54 865 -120 1032 -261 1586 -943 1689 -2080 14 -147 14 -561 1 -710 -88 -982 -578 -1654 -1402 -1925 -290 -95 -536 -129 -933 -129 -305 0 -476 15 -665 58 -432 98 -570 277 -647 839 -15 110 -17 320 -20 2100 l-4 1977 463 0 c255 0 549 -5 653 -10z" />
-</ns0:g>
-</ns0:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg24"
+   version="1.1"
+   viewBox="0 0 59 64"
+   height="64mm"
+   width="59mm"
+   sodipodi:docname="B.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="990"
+     id="namedview486"
+     showgrid="false"
+     inkscape:zoom="0.97565104"
+     inkscape:cx="111.49606"
+     inkscape:cy="120.94488"
+     inkscape:window-x="0"
+     inkscape:window-y="61"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg24" />
+  <defs
+     id="defs18" />
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-233)"
+     id="layer1">
+    <flowRoot
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot26"
+       xml:space="preserve"><flowRegion
+         style="text-align:end;text-anchor:end"
+         id="flowRegion28"><rect
+           style="text-align:end;text-anchor:end"
+           y="3.6670444"
+           x="-2.8571429"
+           height="385.71429"
+           width="380"
+           id="rect30" /></flowRegion><flowPara
+         id="flowPara32" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:88.19444275px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="-23.896383"
+       y="297.32965"
+       id="text492"><tspan
+         sodipodi:role="line"
+         x="-1.0941573"
+         y="297.32965"
+         id="tspan490"
+         style="stroke-width:0.26458332;text-anchor:start;text-align:start;"><tspan
+           x="-1.0941579"
+           y="297.32965"
+           id="tspan488"
+           style="stroke-width:0.26458332;text-anchor:start;text-align:start;">B</tspan></tspan></text>
+  </g>
+</svg>

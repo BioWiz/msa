@@ -6,7 +6,7 @@ file_formats = ['clustal', 'clustal_num', 'msf', 'fasta']
 color_maps = colorMaps.get_all_color_map_names()
 
 
-def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, steps=5, dest_file=''):
+def draw_seqlogo_from_file(file, color_scheme, web=False, plot_width=20, plot_height=160, steps=5, dest_file=''):
     """ Gets a multiple sequence alignment file and draws the plot into an html file.
 
     :param file: The path to the clustal / clustal_num / msf / fasta file.
@@ -34,7 +34,7 @@ def draw_seqlogo_from_file(file, color_scheme, plot_width=20, plot_height=160, s
     parsed_sequences = parser.parse_file(file)
     if isinstance(parsed_sequences, Exception):
         return f'Drawing alignment failed with the following error: {parsed_sequences}'
-    sl.draw(parsed_sequences, color_scheme)
+    sl.draw(parsed_sequences, color_scheme, web)
     return sl
 
 

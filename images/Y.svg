@@ -1,8 +1,82 @@
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" height="1269.000000pt" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 1280.000000 1269.000000" width="1280.000000pt">
-<ns0:metadata>
-Created by potrace 1.15, written by Peter Selinger 2001-2017
-</ns0:metadata>
-<ns0:g fill="#15a4a4" transform="translate(0.000000,1269.000000) scale(0.100000,-0.100000)">
-<ns0:path d="M377 12142 l-27 -28 0 -400 0 -401 23 -21 c20 -19 35 -22 106 -22 314 0 576 -89 811 -274 203 -161 444 -456 702 -861 43 -66 719 -1200 1503 -2520 l1425 -2400 -3 -1345 c-4 -1467 -2 -1401 -62 -1628 -51 -191 -149 -341 -274 -416 -198 -120 -664 -220 -1216 -261 -44 -3 -104 -8 -132 -11 l-53 -5 0 -422 0 -421 27 -28 27 -28 3141 0 3141 0 27 28 27 28 0 421 0 422 -52 5 c-29 3 -134 13 -233 21 -466 40 -833 116 -1042 216 -203 97 -311 273 -375 609 -21 114 -22 127 -25 1465 l-4 1350 1037 1705 c570 938 1214 1998 1431 2355 821 1350 1084 1691 1448 1872 157 78 294 111 500 120 122 5 143 8 163 26 l22 20 0 402 0 401 -28 27 -28 27 -2040 0 -2040 0 -27 -28 -27 -28 0 -421 0 -421 73 -7 c222 -21 480 -61 647 -101 420 -99 618 -246 685 -509 19 -76 20 -256 0 -366 -20 -115 -57 -240 -103 -346 -33 -77 -2026 -3508 -2057 -3541 -9 -10 -246 378 -1150 1890 -626 1047 -1149 1928 -1162 1959 -40 98 -55 171 -60 294 -6 141 10 225 59 318 131 244 449 353 1181 403 l97 6 0 422 0 422 -28 27 -28 27 -3000 0 -3000 0 -27 -28z" />
-</ns0:g>
-</ns0:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg24"
+   version="1.1"
+   viewBox="0 0 59 64"
+   height="64mm"
+   width="59mm"
+   sodipodi:docname="Y.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="990"
+     id="namedview5813"
+     showgrid="false"
+     inkscape:zoom="0.97565104"
+     inkscape:cx="111.49606"
+     inkscape:cy="120.94488"
+     inkscape:window-x="0"
+     inkscape:window-y="61"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg24" />
+  <defs
+     id="defs18" />
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-233)"
+     id="layer1">
+    <flowRoot
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot26"
+       xml:space="preserve"><flowRegion
+         style="text-align:end;text-anchor:end"
+         id="flowRegion28"><rect
+           style="text-align:end;text-anchor:end"
+           y="3.6670444"
+           x="-2.8571429"
+           height="385.71429"
+           width="380"
+           id="rect30" /></flowRegion><flowPara
+         id="flowPara32" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:88.19444275px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="-24.195639"
+       y="297.16299"
+       id="text5819"><tspan
+         sodipodi:role="line"
+         x="2.9129558"
+         y="297.16299"
+         id="tspan5817"
+         style="stroke-width:0.26458332;text-anchor:start;text-align:start;"><tspan
+           x="2.912955"
+           y="297.16299"
+           id="tspan5815"
+           style="stroke-width:0.26458332;text-anchor:start;text-align:start;">Y</tspan></tspan></text>
+  </g>
+</svg>

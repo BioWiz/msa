@@ -3,14 +3,18 @@ from bioviz import colorMaps, utils
 from bokeh.io import output_file, show, save
 from bokeh.io.export import export_png, export_svgs
 from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
-from bokeh.models.glyphs import ImageURL
+
+from bokeh.models.glyphs import ImageURL, Image
 from bokeh.layouts import column
 from datetime import datetime
 
+#from bokeh.plotting import Figure
+
+base_path = utils.get_base_path()
 
 class SeqLogo(object):
     
-    def __init__(self,plot_width,plot_height,steps,dest_file):
+    def __init__(self,plot_width, plot_height,steps,dest_file):
         self.plots = []
         self.plot_width = plot_width
         self.plot_height = plot_height
@@ -18,14 +22,8 @@ class SeqLogo(object):
         self.steps = steps
         self.dest_file = dest_file
 
-    plot_width = 20
-    plot_height = 160
-    # Steps of the ticker on the x axis
-    steps = 5
-    dest_file = ''
-    plots = []
 
-    def draw(self, parsed_sequences, color_scheme):
+    def draw(self, parsed_sequences, color_scheme, web):
         if self.dest_file is '':
             timestamp = datetime.now().strftime("%y%m%d%H%M%S%f")
             self.dest_file = 'seqLogo_' + timestamp + '.html'
@@ -38,9 +36,9 @@ class SeqLogo(object):
         # data numbering starts at 1 -> so should the ratio
         ratio.insert(0, {})
 
-        color_map = colorMaps.get_colormap(color_scheme)
-        for letter, color in color_map.items():
-            utils.add_color(letter, color)
+        #color_map = colorMaps.get_colormap(color_scheme)
+        #for letter, color in color_map.items():
+        #    utils.add_color(letter, color)
 
         # Each subplot should be plot_width letter 'long' at max.
         subplot_count = math.ceil(seq_length / self.plot_width)
@@ -66,16 +64,23 @@ class SeqLogo(object):
                            min_border_top=10, toolbar_location=None)
 
             _sum = 0
-            for r in range(x_start, x_end):
-                for letter, rat in ratio[r].items():
+            for position in range(x_start, x_end):
+                for letter, rat in ratio[position].items():                      
                     remainder = 0
                     if not rat == 1.0:
                         remainder = _sum % 1
+                        
                     _sum += rat
                     if not rat == 0.0:
-                        image = ImageURL(name=letter, url=dict(value="images/" + letter + ".svg"), x=r, y=remainder,
+                        #print(f'{letter}:ratio:{rat}, {remainder}')
+                        if web:
+                            image = ImageURL(name=letter, url=dict(value=f'http://localhost:8080//img/{color_scheme}_{letter}.svg'), x=position, y=remainder,
                                          w=1, h=rat, anchor="bottom_center")
-                        subplot.add_glyph(source_seq, image)
+                            subplot.add_glyph(source_seq, image)
+                        else:
+                            image = ImageURL(name=letter, url=dict(value=f'{base_path}/../images/{color_scheme}_{letter}.svg'), x=position, y=remainder,
+                                         w=1, h=rat, anchor="bottom_center")
+                            subplot.add_glyph(source_seq, image)
                 _sum = 0
 
             xaxis = LinearAxis(axis_label="Position")

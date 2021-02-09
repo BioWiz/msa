@@ -1,8 +1,82 @@
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" height="1280.000000pt" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 1218.000000 1280.000000" width="1218.000000pt">
-<ns0:metadata>
-Created by potrace 1.15, written by Peter Selinger 2001-2017
-</ns0:metadata>
-<ns0:g fill="#80a0f0" transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-<ns0:path d="M502 12357 l-32 -33 0 -436 0 -437 43 -5 c23 -3 89 -10 147 -16 343 -35 666 -115 845 -208 241 -127 341 -385 366 -952 15 -349 7 -7872 -9 -8000 -45 -361 -131 -579 -266 -680 -176 -132 -522 -226 -996 -273 l-125 -12 -3 -439 -2 -440 27 -28 27 -28 5407 0 5408 0 5 53 c3 28 22 336 41 682 39 690 148 2624 195 3430 l29 510 -26 28 -27 27 -486 0 -486 0 -12 -128 c-40 -424 -142 -921 -263 -1284 -302 -904 -842 -1571 -1583 -1954 -475 -246 -986 -375 -1634 -415 -207 -13 -740 -7 -937 11 -380 33 -645 90 -806 170 -209 106 -323 310 -386 697 -16 102 -18 342 -21 4098 -2 2888 0 4030 8 4134 25 324 90 547 197 679 75 92 235 173 454 231 169 45 322 69 677 107 l52 5 0 438 0 437 -33 32 -33 32 -2865 0 -2865 0 -32 -33z" />
-</ns0:g>
-</ns0:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg24"
+   version="1.1"
+   viewBox="0 0 59 64"
+   height="64mm"
+   width="59mm"
+   sodipodi:docname="L.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="990"
+     id="namedview4898"
+     showgrid="false"
+     inkscape:zoom="0.97565104"
+     inkscape:cx="111.49606"
+     inkscape:cy="120.94488"
+     inkscape:window-x="0"
+     inkscape:window-y="61"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg24" />
+  <defs
+     id="defs18" />
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-233)"
+     id="layer1">
+    <flowRoot
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot26"
+       xml:space="preserve"><flowRegion
+         style="text-align:end;text-anchor:end"
+         id="flowRegion28"><rect
+           style="text-align:end;text-anchor:end"
+           y="3.6670444"
+           x="-2.8571429"
+           height="385.71429"
+           width="380"
+           id="rect30" /></flowRegion><flowPara
+         id="flowPara32" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:88.19444275px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="-17.57839"
+       y="297.263"
+       id="text4904"><tspan
+         sodipodi:role="line"
+         x="2.4246943"
+         y="297.263"
+         id="tspan4902"
+         style="stroke-width:0.26458332;text-anchor:start;text-align:start;"><tspan
+           x="2.4246945"
+           y="297.263"
+           id="tspan4900"
+           style="stroke-width:0.26458332;text-anchor:start;text-align:start;">L</tspan></tspan></text>
+  </g>
+</svg>

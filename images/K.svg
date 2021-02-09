@@ -1,8 +1,82 @@
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" height="1201.000000pt" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 1280.000000 1201.000000" width="1280.000000pt">
-<ns0:metadata>
-Created by potrace 1.15, written by Peter Selinger 2001-2017
-</ns0:metadata>
-<ns0:g fill="#f01505" transform="translate(0.000000,1201.000000) scale(0.100000,-0.100000)">
-<ns0:path d="M302 11547 c-22 -23 -22 -26 -22 -430 0 -224 3 -407 8 -407 4 0 68 -7 142 -15 411 -46 705 -124 865 -230 135 -90 210 -249 262 -555 17 -99 18 -315 21 -3795 2 -2662 0 -3730 -8 -3835 -31 -400 -120 -616 -300 -725 -160 -97 -447 -171 -822 -212 l-168 -18 0 -404 0 -405 27 -28 27 -28 2641 0 2641 0 27 28 27 28 0 405 0 405 -132 13 c-166 16 -384 52 -517 86 -409 103 -540 235 -611 614 -38 204 -40 302 -40 1736 l1 1400 401 362 c221 200 402 362 403 360 30 -35 2742 -3753 2772 -3799 185 -286 204 -531 49 -633 -100 -67 -370 -108 -853 -131 l-143 -7 0 -405 0 -406 27 -28 27 -28 2722 0 2722 0 26 31 27 31 -3 396 -3 397 -110 37 c-234 80 -502 234 -740 424 -130 104 -407 378 -524 519 -117 140 -162 200 -2156 2904 l-1787 2423 28 28 c88 84 2275 2100 2359 2174 418 368 937 660 1410 790 200 55 346 77 548 83 171 6 180 7 208 30 l29 25 0 383 c0 372 -1 383 -21 409 l-20 26 -2472 0 -2471 0 -28 -27 -28 -27 0 -376 0 -376 33 -32 33 -32 169 0 c354 0 669 -57 850 -153 83 -45 169 -127 202 -195 25 -51 28 -67 27 -152 -1 -75 -7 -113 -29 -180 -55 -169 -170 -359 -335 -554 -63 -73 -601 -590 -1649 -1584 -856 -811 -1589 -1507 -1629 -1546 l-73 -71 4 1770 c3 1612 5 1779 20 1875 49 301 127 465 262 555 160 106 454 184 865 230 74 8 138 15 143 15 4 0 7 184 7 408 l0 409 -23 21 -23 22 -2650 0 -2651 0 -21 -23z" />
-</ns0:g>
-</ns0:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg24"
+   version="1.1"
+   viewBox="0 0 59 64"
+   height="64mm"
+   width="59mm"
+   sodipodi:docname="K.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="990"
+     id="namedview4837"
+     showgrid="false"
+     inkscape:zoom="0.97565104"
+     inkscape:cx="111.49606"
+     inkscape:cy="120.94488"
+     inkscape:window-x="0"
+     inkscape:window-y="61"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg24" />
+  <defs
+     id="defs18" />
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-233)"
+     id="layer1">
+    <flowRoot
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot26"
+       xml:space="preserve"><flowRegion
+         style="text-align:end;text-anchor:end"
+         id="flowRegion28"><rect
+           style="text-align:end;text-anchor:end"
+           y="3.6670444"
+           x="-2.8571429"
+           height="385.71429"
+           width="380"
+           id="rect30" /></flowRegion><flowPara
+         id="flowPara32" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:88.19444275px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="-27.48304"
+       y="297.263"
+       id="text4843"><tspan
+         sodipodi:role="line"
+         x="-1.9678029"
+         y="297.263"
+         id="tspan4841"
+         style="stroke-width:0.26458332;text-anchor:start;text-align:start;"><tspan
+           x="-1.9678022"
+           y="297.263"
+           id="tspan4839"
+           style="stroke-width:0.26458332;text-anchor:start;text-align:start;">K</tspan></tspan></text>
+  </g>
+</svg>
