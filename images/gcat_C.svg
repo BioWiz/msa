@@ -1,0 +1,16 @@
+<ns0:svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" xmlns:ns4="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" height="66mm" id="svg24" version="1.1" viewBox="0 0 59 66" width="59mm" ns1:docname="C.svg" ns2:version="0.92.4 (5da689c313, 2019-01-14)">
+  <ns1:namedview bordercolor="#666666" borderopacity="1" gridtolerance="10" guidetolerance="10" id="namedview582" objecttolerance="10" pagecolor="#ffffff" showgrid="false" ns2:current-layer="svg24" ns2:cx="111.49606" ns2:cy="124.72441" ns2:pageopacity="0" ns2:pageshadow="2" ns2:window-height="990" ns2:window-maximized="1" ns2:window-width="1920" ns2:window-x="0" ns2:window-y="61" ns2:zoom="0.94608586" />
+  <ns0:defs id="defs18" />
+  <ns0:metadata id="metadata21">
+    <rdf:RDF>
+      <ns4:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </ns4:Work>
+    </rdf:RDF>
+  </ns0:metadata>
+  <ns0:g id="layer1" transform="translate(0,-231)">
+    <ns0:flowRoot id="flowRoot26" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none" xml:space="preserve"><ns0:flowRegion id="flowRegion28" style="text-align:end;text-anchor:end"><ns0:rect height="385.71429" id="rect30" style="text-align:end;text-anchor:end" width="380" x="-2.8571429" y="3.6670444" /></ns0:flowRegion><ns0:flowPara id="flowPara32" /></ns0:flowRoot>    <ns0:text id="text588" style="font-style:normal;font-weight:normal;font-size:88.19444275px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:orange;fill-opacity:1;stroke:none;stroke-width:0.26458332;" x="-27.755028" y="296.26059" xml:space="preserve"><ns0:tspan id="tspan586" style="stroke-width:0.26458332;text-anchor:start;text-align:start;" x="-1.8306844" y="296.26059" ns1:role="line"><ns0:tspan id="tspan584" style="stroke-width:0.26458332;text-anchor:start;text-align:start;" x="-1.8306853" y="296.26059">C</ns0:tspan></ns0:tspan></ns0:text>
+  </ns0:g>
+</ns0:svg>

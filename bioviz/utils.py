@@ -17,20 +17,6 @@ def add_color(letter, color):
         dest.write(svg_var)
 
 
-def generate_resource(letter, color):
-    if letter == '-':
-        return
-    svg_tree = ET.parse(f'{package_base_path}/../images/{letter}.svg')
-    svg_root = svg_tree.getroot()
-
-    for child in svg_root:
-        if child.tag.endswith('g') or child.tag.endswith('path'):
-            child.attrib['fill'] = color
-
-    svg_var = ET.tostring(svg_root, encoding='unicode', method='xml')
-    with open(f'{package_base_path}/../images/{letter}.svg') as dest:
-        dest.write(svg_var)
-
 def calculate_ratio(parsed_sequences):
     ratio = []
     seq_length = parsed_sequences[0].get('seq_length')

@@ -91,7 +91,7 @@ class SeqLogo(object):
             subplot.add_layout(Grid(dimension=0, ticker=xaxis.ticker))
             self.plots.append(subplot)
 
-            return self.plots
+        return self.plots
 
     def show(self):
         show(column(self.plots))

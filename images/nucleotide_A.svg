@@ -1,0 +1,16 @@
+<ns0:svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" xmlns:ns2="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns4="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" height="64mm" id="svg24" version="1.1" viewBox="0 0 59 64" width="59mm" ns2:docname="A.svg" ns1:version="0.92.4 (5da689c313, 2019-01-14)">
+  <ns0:defs id="defs18" />
+  <ns2:namedview bordercolor="#666666" borderopacity="1.0" id="base" pagecolor="#ffffff" showgrid="false" units="mm" ns1:current-layer="layer1" ns1:cx="58.867659" ns1:cy="124.74701" ns1:document-units="mm" ns1:pageopacity="0.0" ns1:pageshadow="2" ns1:window-height="990" ns1:window-maximized="1" ns1:window-width="1920" ns1:window-x="0" ns1:window-y="61" ns1:zoom="1.979899" />
+  <ns0:metadata id="metadata21">
+    <rdf:RDF>
+      <ns4:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </ns4:Work>
+    </rdf:RDF>
+  </ns0:metadata>
+  <ns0:g id="layer1" transform="translate(0,-233)" ns1:groupmode="layer" ns1:label="Layer 1">
+    <ns0:text id="text431" style="font-style:normal;font-weight:normal;font-size:88.19444275px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#64F73F;fill-opacity:1;stroke:none;stroke-width:0.26458332" x="-30.062695" y="297.19601" xml:space="preserve"><ns0:tspan id="tspan429" style="text-align:start;text-anchor:start;stroke-width:0.26458332" x="-0.60712826" y="297.19601" ns2:role="line"><ns0:tspan id="tspan427" style="text-align:start;text-anchor:start;stroke-width:0.26458332" x="-0.60712826" y="297.19601">A</ns0:tspan></ns0:tspan></ns0:text>
+  </ns0:g>
+</ns0:svg>
