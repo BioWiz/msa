@@ -116,7 +116,7 @@ class Dendrogram(object):
         draw_y = [[start_y, line[1]] if line[0] == 0 else [line[0], line[1]] for line in draw_y]
 
         # Draw plot
-        self.p = figure(plot_width=self.plot_width, height=self.plot_height)
+        self.p = figure(plot_width=self.plot_width, height=self.plot_height, toolbar_location=None)
 
         # Set plot width for labels to be visible.
         longest = max(label_x)

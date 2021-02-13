@@ -3,7 +3,6 @@ from bioviz import colorMaps, utils
 from bokeh.io import output_file, show, save
 from bokeh.io.export import export_png, export_svgs
 from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
-
 from bokeh.models.glyphs import ImageURL, Image
 from bokeh.layouts import column
 from datetime import datetime
@@ -61,7 +60,8 @@ class SeqLogo(object):
             subplot = Plot(title=None, plot_width=int(80 * self.plot_width), plot_height=self.plot_height,
                            x_range=Range1d(start=x_start - 1, end=x_end),
                            y_range=Range1d(start=0, end=1),
-                           min_border_top=10, toolbar_location=None)
+                           min_border_top=10, toolbar_location=None,
+                           )
 
             _sum = 0
             for position in range(x_start, x_end):
@@ -89,8 +89,7 @@ class SeqLogo(object):
             subplot.add_layout(xaxis, 'below')
 
             subplot.add_layout(Grid(dimension=0, ticker=xaxis.ticker))
-            self.plots.append(subplot)
-
+            self.plots.append(subplot)      
         return self.plots
 
     def show(self):

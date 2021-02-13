@@ -51,7 +51,9 @@ class Alignment(object):
                            x_range=Range1d(start=x_start-1, end=x_end),
                            y_range=Range1d(start=0, end=sequence_count),
                            min_border_top=10, min_border_left=50,
-                           toolbar_location=None)
+                           toolbar_location = None   
+                           )
+
 
             # Add sequences to the plot.
             for i in range(0, sequence_count):
