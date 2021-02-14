@@ -107,11 +107,11 @@ class Alignment(object):
             for plot in self.plots:
                 plot.background_fill_color = None
                 plot.border_fill_color = None
-        if img_type is "png":
+        if img_type == "png":
             return export_png(column(self.plots), filename=self.dest_file.split(".")[0] + ".png")
-        elif img_type is "svg":
+        elif img_type == "svg":
             for plot in self.plots:
                 plot.output_backend = "svg"
-            return export_svgs(column(self.plots), filename=self.dest_file.split(".")[0] + ".svg")
+            return export_svgs(column(self.plots), filename=self.dest_file.split(".")[0] + ".svg")[0]
         else:
-            return print("Possible image types are 'svg' and 'png'.")
+            return print("Possible image types are 'svg' or 'png'.")

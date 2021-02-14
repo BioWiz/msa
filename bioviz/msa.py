@@ -177,7 +177,7 @@ def export_image(logo, img_type, transparent=False):
     if img_type != 'png' and img_type != 'svg':
         logging.error("Image type should be png or svg.")
         return
-    logo.export_image(img_type, transparent)
+    return logo.export_image(img_type, transparent)
 
 
 def get_all_color_map_names():
