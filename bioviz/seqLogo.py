@@ -1,7 +1,7 @@
 import math
 from bioviz import colorMaps, utils
 from bokeh.io import output_file, show, save
-from bokeh.io.export import export_png, export_svgs
+from bokeh.io.export import export_png, export_svg
 from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
 from bokeh.models.glyphs import ImageURL, Image
 from bokeh.layouts import column
@@ -10,7 +10,6 @@ from datetime import datetime
 #from bokeh.plotting import Figure
 
 base_path = utils.get_base_path()
-
 class SeqLogo(object):
     
     def __init__(self,plot_width, plot_height,steps,dest_file):
@@ -41,7 +40,6 @@ class SeqLogo(object):
 
         # Each subplot should be plot_width letter 'long' at max.
         subplot_count = math.ceil(seq_length / self.plot_width)
-
         # Create subplots.
         for k in range(0, subplot_count):
             x_start = 1 + self.plot_width * k
@@ -111,6 +109,6 @@ class SeqLogo(object):
         elif img_type == "svg":
             for plot in self.plots:
                 plot.output_backend = "svg"
-            return export_svgs(column(self.plots), filename=self.dest_file.split(".")[0] + ".svg")[0]
+            return export_svg(column(self.plots), filename=self.dest_file.split(".")[0] + ".svg")[0]
         else:
             return print("Possible image types are 'svg' and 'png'.")

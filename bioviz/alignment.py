@@ -2,7 +2,7 @@ from bioviz import colorMaps
 from bokeh.models import ColumnDataSource, Plot, LinearAxis, Grid, Range1d
 from bokeh.models.glyphs import Text
 from bokeh.io import show, output_file, save
-from bokeh.io.export import export_png, export_svgs
+from bokeh.io.export import export_png, export_svg
 from bokeh.transform import factor_cmap
 from bokeh.layouts import column
 import math
@@ -112,6 +112,6 @@ class Alignment(object):
         elif img_type == "svg":
             for plot in self.plots:
                 plot.output_backend = "svg"
-            return export_svgs(column(self.plots), filename=self.dest_file.split(".")[0] + ".svg")[0]
+            return export_svg(column(self.plots), filename=self.dest_file.split(".")[0] + ".svg")[0]
         else:
             return print("Possible image types are 'svg' or 'png'.")

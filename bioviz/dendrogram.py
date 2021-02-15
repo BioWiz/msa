@@ -1,6 +1,6 @@
 import copy
 from Bio import Phylo
-from bokeh.io import export_png, export_svgs
+from bokeh.io.export import export_png, export_svg
 from bokeh.models import ColumnDataSource, LabelSet, Range1d
 from bokeh.plotting import figure, output_file, show, save
 
@@ -159,6 +159,6 @@ class Dendrogram(object):
             return export_png(self.p, filename=self.dest_file.split(".")[0] + ".png")
         elif img_type == "svg":
             self.p.output_backend = "svg"
-            return export_svgs(self.p, filename=self.dest_file.split(".")[0] + ".svg")[0]
+            return export_svg(self.p, filename=self.dest_file.split(".")[0] + ".svg")[0]
         else:
             return print("Possible image types are 'svg' and 'png'.")
