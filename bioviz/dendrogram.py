@@ -155,10 +155,10 @@ class Dendrogram(object):
         if transparent:
             self.p.background_fill_color = None
             self.p.border_fill_color = None
-        if img_type is "png":
+        if img_type == "png":
             return export_png(self.p, filename=self.dest_file.split(".")[0] + ".png")
-        elif img_type is "svg":
+        elif img_type == "svg":
             self.p.output_backend = "svg"
-            export_svgs(self.p, filename=self.dest_file.split(".")[0] + ".svg")
+            return export_svgs(self.p, filename=self.dest_file.split(".")[0] + ".svg")[0]
         else:
             return print("Possible image types are 'svg' and 'png'.")
