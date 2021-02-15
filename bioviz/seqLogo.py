@@ -74,7 +74,7 @@ class SeqLogo(object):
                     if not rat == 0.0:
                         #print(f'{letter}:ratio:{rat}, {remainder}')
                         if web:
-                            image = ImageURL(name=letter, url=dict(value=f'http://localhost:8080//img/{color_scheme}_{letter}.svg'), x=position, y=remainder,
+                            image = ImageURL(name=letter, url=dict(value=f'/img/{color_scheme}_{letter}.svg'), x=position, y=remainder,
                                          w=1, h=rat, anchor="bottom_center")
                             subplot.add_glyph(source_seq, image)
                         else:
