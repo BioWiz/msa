@@ -171,8 +171,8 @@ def export_image(logo, img_type, transparent=False):
     :param transparent: Default is False.
     :type transparent: bool
     """
-    if not isinstance(logo, dendrogram.Dendrogram) and not isinstance(logo, alignment.Alignment):
-        logging.error("The logo parameter should be the type of Dendrogram / Alignment.")
+    if not isinstance(logo, dendrogram.Dendrogram) and not isinstance(logo, alignment.Alignment) and not isinstance(logo, seqLogo.SeqLogo):
+        logging.error("The logo parameter should be the type of Dendrogram, Alignment or Sequence Logo.")
         return
     if img_type != 'png' and img_type != 'svg':
         logging.error("Image type should be png or svg.")
