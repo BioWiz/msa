@@ -1,1 +1,4 @@
 graft images
+# include images/*.*
+# include example_data/*.*
+# include tests/*.*

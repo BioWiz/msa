@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 import os
-package_base_path = os.path.abspath(os.path.dirname(__file__))
+package_base_path = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
 def add_color(letter, color):
     if letter == '-':

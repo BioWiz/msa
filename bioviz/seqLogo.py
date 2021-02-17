@@ -76,7 +76,7 @@ class SeqLogo(object):
                                          w=1, h=rat, anchor="bottom_center")
                             subplot.add_glyph(source_seq, image)
                         else:
-                            image = ImageURL(name=letter, url=dict(value=f'{base_path}/../images/{color_scheme}_{letter}.svg'), x=position, y=remainder,
+                            image = ImageURL(name=letter, url=dict(value=f'{base_path}/images/{color_scheme}_{letter}.svg'), x=position, y=remainder,
                                          w=1, h=rat, anchor="bottom_center")
                             subplot.add_glyph(source_seq, image)
                 _sum = 0

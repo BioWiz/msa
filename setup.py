@@ -11,8 +11,9 @@ setuptools.setup(
     description="Visualize biological data using Bokeh",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Beck-berry/visualize-biodata-python",
-    packages=setuptools.find_packages(),
+    url="https://github.com/BioWiz/msa",
+    packages=setuptools.find_packages("bioviz"),
+    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",
