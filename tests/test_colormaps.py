@@ -15,6 +15,7 @@ def test_get_colormap_undefined():
 
 def test_get_colormap_clustal():
     expected_result = {
+        '-': 'black',
         "A": "red",
         "C": "blue",
         "G": "orange",
@@ -27,6 +28,7 @@ def test_get_colormap_clustal():
 
 def test_get_colormap_mac_clade():
     expected_result = {
+        '-': 'black',
         "A": "red",
         "C": "green",
         "G": "yellow",
@@ -39,6 +41,7 @@ def test_get_colormap_mac_clade():
 
 def test_get_colormap_gcat():
     expected_result = {
+        '-': 'black',
         "A": "red",
         "C": "orange",
         "G": "orange",
@@ -51,6 +54,7 @@ def test_get_colormap_gcat():
 
 def test_get_colormap_purine_pyrimidine():
     expected_result = {
+        '-': 'black',
         "A": "pink",
         "C": "blue",
         "G": "pink",
@@ -63,6 +67,7 @@ def test_get_colormap_purine_pyrimidine():
 
 def test_get_colormap_translation():
     expected_result = {
+        '-': 'black',
         "A": "red",
         "C": "red",
         "G": "red",
@@ -75,6 +80,7 @@ def test_get_colormap_translation():
 
 def test_get_colormap_annotation():
     expected_result = {
+        '-': 'black',
         "A": "yellow",
         "C": "yellow",
         "G": "black",
@@ -87,6 +93,7 @@ def test_get_colormap_annotation():
 
 def test_get_colormap_nucleotide():
     expected_result = {
+        '-': 'black',
         "A": "#64F73F",
         "C": "#FFB340",
         "G": "#EB413C",
@@ -99,6 +106,7 @@ def test_get_colormap_nucleotide():
 
 def test_get_colormap_protein_clustal():
     expected_result = {
+        '-': 'black',
         "A": "#80a0f0",
         "R": "#f01505",
         "N": "#00ff00",
@@ -129,6 +137,7 @@ def test_get_colormap_protein_clustal():
 
 def test_get_colormap_protein_zappo():
     expected_result = {
+        '-': 'black',
         "A": "#ffafaf",
         "R": "#6464ff",
         "N": "#00ff00",
@@ -159,6 +168,7 @@ def test_get_colormap_protein_zappo():
 
 def test_get_colormap_protein_taylor():
     expected_result = {
+        '-': 'black',
         "A": "#ccff00",
         "R": "#0000ff",
         "N": "#cc00ff",
@@ -189,6 +199,7 @@ def test_get_colormap_protein_taylor():
 
 def test_get_colormap_protein_hydrophobicity():
     expected_result = {
+        '-': 'black',
         "A": "#ad0052",
         "R": "#0000ff",
         "N": "#0c00f3",
@@ -219,6 +230,7 @@ def test_get_colormap_protein_hydrophobicity():
 
 def test_get_colormap_protein_helix_propensity():
     expected_result = {
+        '-': 'black',
         "A": "#e718e7",
         "R": "#6f906f",
         "N": "#1be41b",
@@ -249,6 +261,7 @@ def test_get_colormap_protein_helix_propensity():
 
 def test_get_colormap_protein_strand_propensity():
     expected_result = {
+        '-': 'black',
         "A": "#5858a7",
         "R": "#6b6b94",
         "N": "#64649b",
@@ -279,6 +292,7 @@ def test_get_colormap_protein_strand_propensity():
 
 def test_get_colormap_protein_turn_propensity():
     expected_result = {
+        '-': 'black',
         "A": "#2cd3d3",
         "R": "#708f8f",
         "N": "#ff0000",
@@ -309,6 +323,7 @@ def test_get_colormap_protein_turn_propensity():
 
 def test_get_colormap_protein_buried_index():
     expected_result = {
+        '-': 'black',
         "A": "#00a35c",
         "R": "#00fc03",
         "N": "#00eb14",

@@ -21,7 +21,7 @@ class SeqLogo(object):
         self.dest_file = dest_file
 
 
-    def draw(self, parsed_sequences, color_scheme, web):
+    def draw(self, parsed_sequences, color_scheme, web=False):
         if self.dest_file is '':
             timestamp = datetime.now().strftime("%y%m%d%H%M%S%f")
             self.dest_file = 'seqLogo_' + timestamp + '.html'

@@ -1,5 +1,6 @@
 nucleotide = {
     'clustal': {
+        '-': 'black',
         "A": "red",
         "C": "blue",
         "G": "orange",
@@ -7,6 +8,7 @@ nucleotide = {
         "U": "green"
     },
     'macClade': {
+        '-': 'black',
         "A": "red",
         "C": "green",
         "G": "yellow",
@@ -14,6 +16,7 @@ nucleotide = {
         "U": "blue"
     },
     'gcat': {
+        '-': 'black',
         "A": "red",
         "C": "orange",
         "G": "orange",
@@ -21,6 +24,7 @@ nucleotide = {
         "U": "red"
     },
     'purinePyrimidine': {
+        '-': 'black',
         "A": "pink",
         "C": "blue",
         "G": "pink",
@@ -28,6 +32,7 @@ nucleotide = {
         "U": "blue"
     },
     'translation': {
+        '-': 'black',
         "A": "red",
         "C": "red",
         "G": "red",
@@ -35,6 +40,7 @@ nucleotide = {
         "U": "green"
     },
     'annotation': {
+        '-': 'black',
         "A": "yellow",
         "C": "yellow",
         "G": "black",
@@ -42,6 +48,7 @@ nucleotide = {
         "U": "green"
     },
     'nucleotide': {
+        '-': 'black',
         "A": "#64F73F",
         "C": "#FFB340",
         "G": "#EB413C",
@@ -52,6 +59,7 @@ nucleotide = {
 
 protein = {
     'proteinClustal': {
+        '-': 'black',
         "A": "#80a0f0",
         "R": "#f01505",
         "N": "#00ff00",
@@ -77,6 +85,7 @@ protein = {
         "Z": "black"
     },
     'proteinZappo': {
+        '-': 'black',
         "A": "#ffafaf",
         "R": "#6464ff",
         "N": "#00ff00",
@@ -102,6 +111,7 @@ protein = {
         "Z": "black"
     },
     'proteinTaylor': {
+        '-': 'black',
         "A": "#ccff00",
         "R": "#0000ff",
         "N": "#cc00ff",
@@ -127,6 +137,7 @@ protein = {
         "Z": "black"
     },
     'proteinHydrophobicity': {
+        '-': 'black',
         "A": "#ad0052",
         "R": "#0000ff",
         "N": "#0c00f3",
@@ -152,6 +163,7 @@ protein = {
         "Z": "#0c00f3"
     },
     'proteinHelixPropensity': {
+        '-': 'black',
         "A": "#e718e7",
         "R": "#6f906f",
         "N": "#1be41b",
@@ -177,6 +189,7 @@ protein = {
         "Z": "#c936c9"
     },
     'proteinStrandPropensity': {
+        '-': 'black',
         "A": "#5858a7",
         "R": "#6b6b94",
         "N": "#64649b",
@@ -202,6 +215,7 @@ protein = {
         "Z": "#4747b8"
     },
     'proteinTurnPropensity': {
+        '-': 'black',
         "A": "#2cd3d3",
         "R": "#708f8f",
         "N": "#ff0000",
@@ -227,6 +241,7 @@ protein = {
         "Z": "#5ba4a4"
     },
     'proteinBuriedIndex': {
+        '-': 'black',
         "A": "#00a35c",
         "R": "#00fc03",
         "N": "#00eb14",

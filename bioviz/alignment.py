@@ -24,7 +24,6 @@ class Alignment(object):
             self.dest_file += ".html"
         output_file(self.dest_file)
         color_map = colorMaps.get_colormap(color_scheme)
-        color_map['-'] = 'black'
         sequence_count = len(parsed_sequences)
         seq_lengths = [parsed_sequences[i].get('seq_length') for i in range(0, sequence_count)]
         seq_names = [parsed_sequences[i].get('id') for i in range(0, sequence_count)]

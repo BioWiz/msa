@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/BioWiz/msa",
-    packages=setuptools.find_packages("bioviz"),
+    packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -23,5 +23,5 @@ setuptools.setup(
         "Topic :: Scientific/Engineering :: Visualization"
     ],
     python_requires='>=3.7',
-    install_requires=['biopython==1.78', 'bokeh==2.2.1', 'selenium==3.141.0']
+    install_requires=['biopython==1.78', 'bokeh==2.2.1', 'selenium==3.141.0','diffimg==0.3.0' ]
 )
