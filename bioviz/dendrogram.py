@@ -120,7 +120,7 @@ class Dendrogram(object):
 
         # Set plot width for labels to be visible.
         longest = max(label_x)
-        self.p.x_range = Range1d(-0.01, longest + len(max(names)) * longest * 0.02)
+        self.p.x_range = Range1d(-0.01, longest + len(max(names)) * longest * 0.1)
 
         # Don't show y axis.
         self.p.yaxis.visible = False
